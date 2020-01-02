@@ -45,5 +45,15 @@ We will have to utilize shared memory so that each process is able to determine 
 
 -Semaphores will indicate the number of active users/instruments in the orchestra. The accessible shared resource for them is the library of instruments.
 
-### Timeline
+-Linked Lists will be used to store the various songs available to be played from our virtual orchestra with each of their parts
+
+### Timeline with expected completion dates of parts of the project:
+
+-Monday 1/6/2019: Connect Multiple computers and display some sort of output.
+
+-Friday 1/11/2019: Be able to run an audio file on each computer while connected
+
+-Monday 1/14/2019: Be able to run an actual piece of music using multiple computers
+
+-Thursday 1/17/2019: Project Due! Clean up user interface and add multiple songs to our library. Test Functionality.
 

@@ -35,9 +35,11 @@ We will have to utilize shared memory so that each process is able to determine 
 
 ### Project Breakdown
 
-Biraj - Will work on incorporating the networking.
-Alex - Responsible for implementation of shared memory and facilitating the interprocess communication.
-Leo - Responsible for creating the program that plays the audio file.
+  Biraj - Will work on incorporating the networking.
+
+  Alex - Responsible for implementation of shared memory and facilitating the interprocess communication.
+
+  Leo - Responsible for creating the program that plays the audio file.
   
 ### Algorithms/Data Structures
 

@@ -4,7 +4,7 @@ Systems Proposal - Biraj Chowdhury, Leo Shestakov, Alex Thompson
 
 ### A statement of the problem you are solving and/or a high level description of the project.
 
-We want to create a program that acts as a virtual orchestra. This means our program will have one computer host the server, acting as the conductor, and other computers that play the separate audio files for the instrumentals.
+We want to create a program that acts as a virtual orchestra. This means our program will have one computer host the server, acting as the conductor, and other computers that play the separate audio files for the instrumentals. We originally intended to be able to split a single audio file, but determined that it was an unlikely goal. We are using jukehost to play the music in th browser.
   
 ### User Interface
 
@@ -19,7 +19,7 @@ We need to be able to read in some form of user input to mark instrument selecti
 
 #### Working with files
 
-The process will select a single music track to be played from a library of tracks depending on user input.
+The process will select a single music track to be played from a library of tracks depending on user input. We will have multiple files for each track.
 
 #### Finding information about files
 

@@ -1,4 +1,21 @@
 #include "networking.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <string.h>
+#include <unistd.h>
+
+char ** links;
+void compile_links(){
+  FILE * f = fopen("links.txt", "r");
+  int linknum = 0;
+  char *input = malloc(200 * sizeof(char));
+  while(fgets(input, 200 * sizeof(char), f)){
+    links[linknum] = input;
+    linknum++;
+  }
+}
 
 int main(int argc, char **argv) {
 

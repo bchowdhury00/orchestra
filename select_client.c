@@ -61,10 +61,10 @@ int main(int argc, char **argv) {
     //this would allow for broadcast messages
     if (FD_ISSET(server_socket, &read_fds)) {
       read(server_socket, buffer, sizeof(buffer));
-      int newbuffer = 0;
-      newbuffer = atoi(buffer) - 48;
-      char *url;
-      url = getLink(newbuffer);
+      // int newbuffer = 0;
+      // newbuffer = atoi(buffer) - 48;
+      // char *url;
+      // url = getLink(newbuffer);
 
       char call[256];
       strcpy(call, "xdg-open "); // opens music in browser

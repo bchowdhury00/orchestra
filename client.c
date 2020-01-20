@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
-
+/*
 char *links[5][200];
 
 
@@ -29,7 +29,7 @@ void compile_links(){
       linkindex++;
     }
   }
-}
+}*/
 
 int main(int argc, char **argv) {
 

@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
       read(server_socket, buffer, sizeof(buffer));
       int newbuffer = 0;
       newbuffer = atoi(buffer) - 48;
-      char url[200] = links[newbuffer];
+      char *url[200] = links[newbuffer];
 
       char call[256];
       strcpy(call, "xdg-open "); // opens music in browser

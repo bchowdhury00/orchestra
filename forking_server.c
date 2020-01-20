@@ -35,5 +35,4 @@ void subserver(int client_socket) {
 }
 
 void process(char * s) {
-  }
 }

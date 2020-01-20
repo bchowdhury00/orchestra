@@ -27,8 +27,8 @@ void subserver(int client_socket) {
 
     printf("[subserver %d] received: [%s]\n", getpid(), buffer);
     //process(buffer);
-    buffer = "fuck you";
-    write(client_socket, buffer, sizeof(buffer));
+    char * s = "fuck you";
+    write(client_socket, s, sizeof(s));
   }//end read loop
   close(client_socket);
   exit(0);

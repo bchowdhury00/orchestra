@@ -6,9 +6,9 @@
 #include <string.h>
 #include <unistd.h>
 
-char *links[5][200];
+char ** links;
 void compile_links(){
-  int f = fopen("links.txt", "r");
+  FILE * f = fopen("links.txt", "r");
   int linknum = 0;
   int linkindex = 0;
   char input;

@@ -1,4 +1,4 @@
-# orchestra
+# Orchestra
 
 Systems Proposal - Biraj Chowdhury, Leo Shestakov, Alex Thompson
 

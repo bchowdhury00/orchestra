@@ -27,8 +27,6 @@ int main(int argc, char **argv) {
 
   fd_set read_fds;
 
-  compile_links();
-
   if (argc == 2)
     server_socket = client_setup( argv[1]);
   else

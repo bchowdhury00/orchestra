@@ -6,14 +6,17 @@
 #include <string.h>
 #include <unistd.h>
 
-char ** links;
-void compile_links(){
+
+char * getLink(int n){
   FILE * f = fopen("links.txt", "r");
   int linknum = 0;
   char *input = malloc(200 * sizeof(char));
   while(fgets(input, 200 * sizeof(char), f)){
-    links[linknum] = input;
-    linknum++;
+    if (n == linknum){
+      return input;
+    } else {
+      linknum++;
+    }
   }
 }
 
@@ -62,7 +65,7 @@ int main(int argc, char **argv) {
       read(server_socket, buffer, sizeof(buffer));
       int newbuffer = 0;
       newbuffer = atoi(buffer) - 48;
-      char *url[200] = links[newbuffer];
+      char *url[200] = getLink(newbuffer);
 
       char call[256];
       strcpy(call, "xdg-open "); // opens music in browser

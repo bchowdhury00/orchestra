@@ -60,7 +60,8 @@ int main(int argc, char **argv) {
     //send messages to all the clients, but
     //this would allow for broadcast messages
     if (FD_ISSET(server_socket, &read_fds)) {
-      read(server_socket, buffer, sizeof(buffer));
+      recv(server_socket, buffer, sizeof(buffer),0);
+      
       int newbuffer = 0;
       printf(buffer);
       newbuffer = atoi(buffer) - 48;

@@ -1,59 +1,11 @@
-# orchestra
+# Drum Orchestra
 
-Systems Proposal - Biraj Chowdhury, Leo Shestakov, Alex Thompson
+Biraj Chowdhury (5th), Leo Shestakov (10th), Alex Thompson (10th)
 
-### A statement of the problem you are solving and/or a high level description of the project.
+We utilized network programming to create a server that acts as a conductor and instructs separate clients to play separate instruments (in sync) as part of a composition/orchestra. The "instruments" are individual drum samples that form a beat. There are 5 (max) possible instruments/clients.
 
-We want to create a program that acts as a virtual orchestra. This means our program will have one computer host the server, acting as the conductor, and other computers that play the separate audio files for the instrumentals. We originally intended to be able to split a single audio file, but determined that it was an unlikely goal. We are using jukehost to play the music in th browser.
+We originally intended to be able to split a single audio (or midi) file, but determined that it was an unlikely goal. Instead, we are using files uploaded to JukeHost to play individually uploaded mp3 files (of separate instruments) through the default browser.
+
+There are no required libraries for this project.
   
-### User Interface
-
-Upon running the program, our user will be directed to a list of musical pieces that our program has the capacity to play. After selecting a piece, the host will direct each computer in the network to play the music.
-  
-### Technical Design
-How you will be using the topics covered in class in the project?
-
-#### Allocating memory 
-
-We need to be able to read in some form of user input to mark instrument selection per process.
-
-#### Working with files
-
-The process will select a single music track to be played from a library of tracks depending on user input. We will have multiple files for each track.
-
-#### Finding information about files
-
-We will show information about each of the available music tracks to aid the user in selecting one.
-
-#### Networking
-
-We need to use networking to connect multiple computers to play each piece in a synchronized way.
-
-#### Shared Memory
-
-We will have to utilize shared memory so that each process is able to determine which audio file it is responsible for playing and no instrument is used more than once.
-
-### Project Breakdown
-
-  Biraj - Will work on incorporating the networking.
-
-  Alex - Responsible for implementation of shared memory and facilitating the interprocess communication.
-
-  Leo - Responsible for creating the program that plays the audio file.
-  
-### Algorithms/Data Structures
-
--Semaphores will indicate the number of active users/instruments in the orchestra. The accessible shared resource for them is the library of instruments.
-
--Linked Lists will be used to store the various songs available to be played from our virtual orchestra with each of their parts
-
-### Timeline with expected completion dates of parts of the project:
-
--Monday 1/6/2019: Connect Multiple computers and display some sort of output.
-
--Friday 1/11/2019: Be able to run an audio file on each computer while connected
-
--Monday 1/14/2019: Be able to run an actual piece of music using multiple computers
-
--Thursday 1/17/2019: Project Due! Clean up user interface and add multiple songs to our library. Test Functionality.
-
+### How to use our project (User Interface)

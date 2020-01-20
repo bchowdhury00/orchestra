@@ -48,5 +48,6 @@ int main(int argc, char **argv) {
     write(server_socket, buffer, sizeof(buffer));
     read(server_socket, buffer, sizeof(buffer));
     printf("received: [%s]\n", buffer);
+    //if buffer
   }
 }

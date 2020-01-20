@@ -64,16 +64,10 @@ int main(int argc, char **argv) {
       newbuffer = atoi(buffer) - 48;
       char url[200] = links[newbuffer];
 
-    // accepts link from command line
-	   if (argc < 2)
-        perror("No bueno")
-        exit(0)
-    url = argv[1]
-    char call[256];
-    strcpy(call, "xdg-open "); // opens music in browser
-    strcat(call, url); // append url
-    system(call);
-
+      char call[256];
+      strcpy(call, "xdg-open "); // opens music in browser
+      strcat(call, url); // append url
+      system(call);
 
       printf("[SERVER BROADCAST] [%s]\n", buffer);
       printf("enter data: ");

@@ -7,5 +7,9 @@ We utilized network programming to create a server that acts as a conductor and 
 We originally intended to be able to split a single audio (or midi) file, but determined that it was an unlikely goal. Instead, we are using files uploaded to JukeHost to play individually uploaded mp3 files (of separate instruments) through the default browser.
 
 There are no required libraries for this project.
-  
+
+### Techniques Implemented
+
+Allocating memory, working with files, working with processes, networking
+
 ### How to use our project (User Interface)

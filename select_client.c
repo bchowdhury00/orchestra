@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
       newbuffer = atoi(buffer) - 48;
       char *url;
       url = getLink(newbuffer);
-      char * url = "https://audio.jukehost.co.uk/cd1b5731ddce664b607088a36fe4eba064e56e06/7608decb967";
+      
       char call[256];
       strcpy(call, "xdg-open "); // opens music in browser
       strcat(call, url); // append url

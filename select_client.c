@@ -24,6 +24,8 @@ int main(int argc, char **argv) {
 
   fd_set read_fds;
 
+  compile_links();
+
   if (argc == 2)
     server_socket = client_setup( argv[1]);
   else
@@ -58,6 +60,21 @@ int main(int argc, char **argv) {
     //this would allow for broadcast messages
     if (FD_ISSET(server_socket, &read_fds)) {
       read(server_socket, buffer, sizeof(buffer));
+      int newbuffer = 0;
+      newbuffer = atoi(buffer) - 48;
+      char url[200] = links[newbuffer];
+
+    // accepts link from command line
+	   if (argc < 2)
+        perror("No bueno")
+        exit(0)
+    url = argv[1]
+    char call[256];
+    strcpy(call, "xdg-open "); // opens music in browser
+    strcat(call, url); // append url
+    system(call);
+
+
       printf("[SERVER BROADCAST] [%s]\n", buffer);
       printf("enter data: ");
       //the above printf does not have \n

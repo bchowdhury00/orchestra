@@ -10,20 +10,10 @@ char ** links;
 void compile_links(){
   FILE * f = fopen("links.txt", "r");
   int linknum = 0;
-  int linkindex = 0;
-  char input;
-  while(1){
-    input = fgetc(f);
-    if(input==EOF){
-      break;
-    } else if (input == " "){
-      links[linknum] = malloc(200 * sizeof(char));
-      linkindex = 0;
-      linknum++;
-    } else {
-      link[linkindex] = input;
-      linkindex++;
-    }
+  char *input = malloc(200 * sizeof(char));
+  while(fgets(input, 200 * sizeof(char), f)){
+    links[linknum] = input;
+    linknum++;
   }
 }
 

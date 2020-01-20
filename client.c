@@ -5,15 +5,11 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
-/*
+
 char *links[5][200];
-
-
 void compile_links(){
   int f = fopen("links.txt", "r");
   int linknum = 0;
-  char *link[200];
-  links[0] = malloc(200 * sizeof(char));
   int linkindex = 0;
   char input;
   while(1){
@@ -29,7 +25,7 @@ void compile_links(){
       linkindex++;
     }
   }
-}*/
+}
 
 int main(int argc, char **argv) {
 

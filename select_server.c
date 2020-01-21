@@ -58,6 +58,7 @@ int main() {
            if (subserver_count == 4)
                memory = "aaaaa";
         send(client_socket,memory,sizeof(memory),0);
+        printf("[server] subserver count: %d\n", subserver_count);
        //}
    }
      else {

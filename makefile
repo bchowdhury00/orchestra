@@ -15,6 +15,10 @@ select_server.o: select_server.c networking.h
 networking.o: networking.c networking.h
 	gcc -c networking.c
 
+create:
+	gcc -o a sharedMem.c
+	./a
+
 clean:
 	gcc -o a removeshm.c
 	./a

@@ -78,7 +78,8 @@ int main() {
 }
 
 void subserver(int client_socket) {
-    int * memory;
+    int p;
+    int * memory = &p;
     int semd = semget(KEY, 1, 0);
     struct sembuf sb;
     sb.sem_num = 0;

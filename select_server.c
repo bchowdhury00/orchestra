@@ -12,11 +12,10 @@
 #define SEG_SIZE sizeof(int)
 
 union semun {
-    int value;
-    struct semid_ds *buffer;
+    int val;
+    struct semid_ds *buff;
     unsigned short *array;
-}
-
+};
 void process(char *s);
 void subserver(int from_client);
 
@@ -37,7 +36,7 @@ int main() {
         semctl(semd, 0, SETVAL, us);
         printf("semaphore created\n");
     }
-    if ((shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | IPC_EXCL | 0644)))
+    if ((int shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | IPC_EXCL | 0644)))
     printf("shared memory segment created\n");
     else{
         printf("error %d: %s\n", errno, strerror(errno));

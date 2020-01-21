@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
     //currently the server is not set up to
     //send messages to all the clients, but
     //this would allow for broadcast messages
-    if (FD_ISSET(server_socket, &read_fds)) {
+    //if (FD_ISSET(server_socket, &read_fds)) {
       recv(server_socket, buffer, sizeof(buffer),0);
 	  int newbuffer;
 	  if (strlen(buffer) == 1) {
@@ -93,7 +93,7 @@ int main(int argc, char **argv) {
       //the above printf does not have \n
       //flush the buffer to immediately print
       fflush(stdout);
-    }//end socket select
+    //}//end socket select
 
   }//end loop
 }

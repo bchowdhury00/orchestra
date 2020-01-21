@@ -8,7 +8,7 @@
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <errno.h>
-#define KEY 93847
+#define KEY 94847
 #define SEG_SIZE 200
 
 union semun {

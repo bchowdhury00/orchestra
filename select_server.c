@@ -90,7 +90,7 @@ void subserver(int client_socket) {
     printf("%d",*memory);
     char c = 48 + memory;
     write(client_socket,c,sizeof(c));
-    *memory = *memory + 1;
+    memory = *memory + 1;
     shmdt(memory);
     sb.sem_op = 1;
     semop(semd, &sb, 1);

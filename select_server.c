@@ -97,7 +97,7 @@ void subserver(int from_client) {
         memory = "aaaa";
     if (strlen(memory) == 4)
         memory = "aaaaa";
-    write(client_socket,memory,sizeof(memory));
+    write(from_client,memory,sizeof(memory));
     shmdt(memory);
     sb.sem_op = 1;
     semop(semd, &sb, 1);

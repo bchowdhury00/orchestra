@@ -79,14 +79,14 @@ int main() {
 }
 
 void subserver(int from_client) {
-    char * memory;
+    char memory;
     int semd = semget(KEY, 1, 0);
     struct sembuf sb;
     sb.sem_num = 0;
     sb.sem_op = -1;
     semop(semd, &sb, 1);
     int shmd = shmget(KEY,SEG_SIZE,0);
-    *memory = shmat(shmd,0,0);
+    memory = shmat(shmd,0,0);
     if (strlen(memory) == 0)
         memory = "a";
     if (strlen(memory) == 1)

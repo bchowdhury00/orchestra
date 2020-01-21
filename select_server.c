@@ -9,7 +9,7 @@
 #include <sys/shm.h>
 #include <errno.h>
 #define KEY 93847
-#define SEG_SIZE sizeof(int)
+#define SEG_SIZE 200
 
 union semun {
     int val;
@@ -42,6 +42,7 @@ int main() {
         printf("error %d: %s\n", errno, strerror(errno));
         exit(0);
     }
+
     //set of file descriptors to read from
     fd_set read_fds;
     listen_socket = server_setup();
@@ -78,8 +79,7 @@ int main() {
 }
 
 void subserver(int client_socket) {
-    int p;
-    int * memory = &p;
+    char * memory;
     int semd = semget(KEY, 1, 0);
     struct sembuf sb;
     sb.sem_num = 0;
@@ -87,10 +87,17 @@ void subserver(int client_socket) {
     semop(semd, &sb, 1);
     int shmd = shmget(KEY,SEG_SIZE,0);
     memory = shmat(shmd,0,0);
-    printf("%d",*memory);
-    char c = 48 + *memory;
-    write(client_socket,c,sizeof(c));
-    *memory = *memory + 1;
+    if (strlen(memory) == 0)
+        memory = "a";
+    if (strlen(memory) == 1)
+        memory = "aa";
+    if (strlen(memory) == 2)
+        memory = "aaa";
+    if (strlen(memory) == 3)
+        memory = "aaaa";
+    if (strlen(memory) == 4)
+        memory = "aaaaa";
+    write(client_socket,memory,sizeof(memory));
     shmdt(memory);
     sb.sem_op = 1;
     semop(semd, &sb, 1);

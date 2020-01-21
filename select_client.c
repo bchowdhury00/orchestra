@@ -63,19 +63,19 @@ int main(int argc, char **argv) {
     if (FD_ISSET(server_socket, &read_fds)) {
       recv(server_socket, buffer, sizeof(buffer),0);
 	  int newbuffer;
-	  if (buffer == '0') {
+	  if (strlen(buffer) == 1) {
 		  newbuffer = 0;
 	  }
-	  if (buffer == '1') {
+	  if (strlen(buffer) == 2) {
 		  newbuffer = 1;
 	  }
-	  if (buffer == '2') {
+	  if (strlen(buffer) == 3) {
 		  newbuffer = 2;
 	  }
-	  if (buffer == '3') {
+	  if (strlen(buffer) == 4) {
 		  newbuffer = 3;
 	  }
-	  if (buffer == '4') {
+	  if (strlen(buffer) == 5) {
 		  newbuffer = 4;
 	  }
     //newbuffer = 2;

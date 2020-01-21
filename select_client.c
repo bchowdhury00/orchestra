@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
         server_socket = client_setup( TEST_IP );
     int newbuffer;
     while (1) {
-        printf("enter data: ");
+        //printf("enter data: ");
         fflush(stdout);
         FD_ZERO(&read_fds);
         FD_SET(STDIN_FILENO, &read_fds); //add stdin to fd set

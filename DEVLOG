@@ -60,11 +60,11 @@ Leo - 1/19/20
   - Global variable unchanging
   - Fixed bugs with select client
 
-Team (Met Up) - 1/20/20
+Team (Met Up) - 1/19/20
   - Now realizing we do need shared memory to get it to work
   - Everything runs, but clients do not receive different info
 
-Team (Discord Call) - 1/21/20
+Team (Discord Call) - 1/20/20
   - The shared memory first gave us File Exists Error #17 so we made a file to counteract that that we run every time.
   - We still cannot get each client to play a different audio file.
   - Dealing with issues because of the need to ssh into school computers
@@ -74,3 +74,9 @@ Team (Discord Call) - 1/21/20
 Leo - 1/21/20
   - First client gets the right information, but then the server behaves incorrectly for additional clients 
   - Will request an extension
+
+Team (Met Up) - 1/21/20
+  - Continued trying to implement shared memory
+  - Discovered existence of subserver_count
+  - Scrapped shared memory model
+  - Each client now gets the right information

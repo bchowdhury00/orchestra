@@ -80,7 +80,7 @@ int main() {
 
 void subserver(int from_client) {
     char buffer[BUFFER_SIZE];
-    while (read(client_socket, buffer, sizeof(buffer))) {
+    while (read(from_client, buffer, sizeof(buffer))) {
         char memory;
         int semd = semget(KEY, 1, 0);
         struct sembuf sb;

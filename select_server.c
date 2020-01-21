@@ -24,6 +24,7 @@ int main() {
     int client_socket;
     int f;
     int subserver_count = 0;
+    int shmd;
     char buffer[BUFFER_SIZE];
     int semd = semget(KEY, 1, IPC_CREAT | IPC_EXCL | 0644);
     if (semd == -1){
@@ -36,7 +37,7 @@ int main() {
         semctl(semd, 0, SETVAL, us);
         printf("semaphore created\n");
     }
-    if ((int shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | IPC_EXCL | 0644)))
+    if (shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | IPC_EXCL | 0644))
     printf("shared memory segment created\n");
     else{
         printf("error %d: %s\n", errno, strerror(errno));

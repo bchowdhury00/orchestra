@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
       char buffer = 48;
       int newbuffer = 0;
       printf(buffer);
-      newbuffer = atoi(buffer) - 48;
+      newbuffer = atoi(buffer);
       char *url;
       url = getLink(newbuffer);
 

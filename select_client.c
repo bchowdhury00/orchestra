@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
                    newbuffer = 2;
                    break;
                }
-               if (str len(buffer) == 4) {
+               if (strlen(buffer) == 4) {
                    newbuffer = 3;
                    break;
                }

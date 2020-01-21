@@ -69,7 +69,7 @@ void subserver(int from_client) {
         sb.sem_op = -1;
         semop(semd, &sb, 1);
         int shmd = shmget(KEY,SEG_SIZE,0);
-        *memory = shmat(shmd,0,0);
+        memory = shmat(shmd,0,0);
         printf("memory is equal to : %s\n",memory);
         if (strlen(memory) == 0)
             memory = "a";

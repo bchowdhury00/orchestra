@@ -70,7 +70,7 @@ void subserver(int from_client) {
         semop(semd, &sb, 1);
         int shmd = shmget(KEY,SEG_SIZE,0);
         memory = shmat(shmd,0,0);
-        print(memory);
+        printf("%s",memory);
         if (strlen(memory) == 0)
             memory = "a";
         if (strlen(memory) == 1)

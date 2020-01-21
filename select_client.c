@@ -83,23 +83,18 @@ int main(int argc, char **argv) {
   //end socket select
   if (strlen(buffer) == 1) {
         newbuffer = 0;
-        break;
     }
     if (strlen(buffer) == 2) {
         newbuffer = 1;
-        break;
     }
     if (strlen(buffer) == 3) {
         newbuffer = 2;
-        break;
     }
     if (strlen(buffer) == 4) {
         newbuffer = 3;
-        break;
     }
     if (strlen(buffer) == 5) {
         newbuffer = 4;
-        break;
     }
   char *url;
   url = getLink(newbuffer);

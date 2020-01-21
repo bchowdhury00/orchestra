@@ -28,7 +28,7 @@ int main() {
     semd = semget(KEY,1,0);
     semop(semd, &sb, 1);
     shmctl(shmd,IPC_RMID,0);
-    printf("removed shared memory")
+    printf("removed shared memory");
     semctl(semd,IPC_RMID, 0);
-    printf("removed semaphore")
+    printf("removed semaphore");
 }

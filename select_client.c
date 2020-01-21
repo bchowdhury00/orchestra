@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
             char * message = "send me a";
             write(server_socket,message,sizeof(message));
             recv(server_socket, buffer, sizeof(buffer),0);
-            printf("-----[%s]\n",buffer);
+            printf("--See # of chars--[%s]\n",buffer);
             if (strlen(buffer) == 1) {
                 newbuffer = 0;
                 break;
@@ -85,8 +85,8 @@ int main(int argc, char **argv) {
   char *url;
   url = getLink(newbuffer);
   char call[256];
-  //strcpy(call, "xdg-open "); // for ubuntu
-  strcpy(call, "xdg-open "); // for mac
+  strcpy(call, "xdg-open "); // for ubuntu
+  //strcpy(call, "xdg-open "); // for mac
   strcat(call, url); // append url
   system(call); // opens music in browser
 }

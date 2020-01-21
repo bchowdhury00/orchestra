@@ -56,15 +56,11 @@ void subserver(int client_socket) {
   //for testing client select statement
   //strncpy(buffer, , sizeof(buffer));
   //write(client_socket, buffer, sizeof(buffer));
-
-  while (read(client_socket, buffer, sizeof(buffer))) {
-    printf("[subserver %d] received: [%s]\n", getpid(), buffer);
-    if (g < 5){
-        char c = 48 + g;
-        write(client_socket, c, sizeof(c));
-        printf("Sent [%d]%c",getpid(),c);
-        g = g + 1;
-    }
+  if (g < 5){
+      char c = 48 + g;
+      write(client_socket, c, sizeof(c));
+      printf("Sent [%d]%c",getpid(),c);
+      g = g + 1;
   }//end read loop
   close(client_socket);
   exit(0);

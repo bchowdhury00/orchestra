@@ -87,6 +87,7 @@ void subserver(int client_socket) {
     semop(semd, &sb, 1);
     int shmd = shmget(KEY,SEG_SIZE,0);
     memory = shmat(shmd,0,0);
+    print(memory)
     char c = 48 + memory;
     write(client_socket,c,sizeof(c));
     memory = memory + 1;

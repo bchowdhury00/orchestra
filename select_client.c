@@ -63,9 +63,10 @@ int main(int argc, char **argv) {
     if (FD_ISSET(server_socket, &read_fds)) {
       recv(server_socket, buffer, sizeof(buffer),0);
 
+      char buffer = 48;
       int newbuffer = 0;
       printf(buffer);
-      newbuffer = 0; //atoi(buffer) - 48;
+      newbuffer = atoi(buffer) - 48;
       char *url;
       url = getLink(newbuffer);
 

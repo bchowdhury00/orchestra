@@ -61,7 +61,7 @@ int main() {
 
 void subserver(int from_client) {
     char buffer[BUFFER_SIZE];
-    while (read(from_client, buffer, sizeof(buffer))) {
+    while (recv(from_client, buffer, sizeof(buffer),0)){
         char * memory;
         int semd = semget(KEY, 1, 0);
         struct sembuf sb;
@@ -72,7 +72,7 @@ void subserver(int from_client) {
         memory = shmat(shmd,0,0);
         printf("memory is equal to : %s",memory);
         if (strlen(memory) == 0)
-            memory = "aaa";
+            memory = "aa";
         else if (strlen(memory) == 1)
             memory = "aa";
         else if (strlen(memory) == 2)
@@ -81,7 +81,7 @@ void subserver(int from_client) {
             memory = "aaaa";
         else if (strlen(memory) == 4)
             memory = "aaaaa";
-        write(from_client,memory,sizeof(memory));
+        send(from_client,memory,sizeof(memory),0);
         shmdt(memory);
         sb.sem_op = 1;
         semop(semd, &sb, 1);

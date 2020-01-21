@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
             char * message = "send me a";
             write(server_socket,message,sizeof(message));
             recv(server_socket, buffer, sizeof(buffer),0);
-            printf("-----%s\n",buffer);
+            printf("-----[%s]\n",buffer);
             if (strlen(buffer) == 1) {
                 newbuffer = 0;
                 break;

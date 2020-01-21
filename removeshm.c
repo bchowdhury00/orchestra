@@ -30,4 +30,5 @@ int main() {
     printf("removed shared memory\n");
     semctl(semd,IPC_RMID, 0);
     printf("removed semaphore\n");
+    return 0;
 }

@@ -47,15 +47,15 @@ int main() {
      char * memory;
        //subserver(client_socket);
        //while (recv(client_socket, buffer, sizeof(buffer),0)){
-           if (subserver_count == 0)
+           if (subserver_count - 1 == 0)
                memory = "a";
-           if (subserver_count == 1)
+           if (subserver_count - 1 == 1)
                memory = "aa";
-           if (subserver_count == 2)
+           if (subserver_count - 1 == 2)
                memory = "aaa";
-           if (subserver_count == 3)
+           if (subserver_count - 1 == 3)
                memory = "aaaa";
-           if (subserver_count == 4)
+           if (subserver_count - 1 == 4)
                memory = "aaaaa";
         send(client_socket,memory,sizeof(memory),0);
         printf("[server] subserver count: %d\n", subserver_count);

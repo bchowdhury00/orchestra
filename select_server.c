@@ -73,13 +73,13 @@ void subserver(int from_client) {
         printf("memory is equal to : %s",memory);
         if (strlen(memory) == 0)
             memory = "a";
-        if (strlen(memory) == 1)
+        else if (strlen(memory) == 1)
             memory = "aa";
-        if (strlen(memory) == 2)
+        else if (strlen(memory) == 2)
             memory = "aaa";
-        if (strlen(memory) == 3)
+        else if (strlen(memory) == 3)
             memory = "aaaa";
-        if (strlen(memory) == 4)
+        else if (strlen(memory) == 4)
             memory = "aaaaa";
         write(from_client,memory,sizeof(memory));
         shmdt(memory);

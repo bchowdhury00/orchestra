@@ -11,6 +11,12 @@
 #define KEY 93847
 #define SEG_SIZE sizeof(int)
 
+union semun {
+    int value;
+    struct semid_ds *buffer;
+    unsigned short *array;
+}
+
 void process(char *s);
 void subserver(int from_client);
 
@@ -20,7 +26,7 @@ int main() {
     int f;
     int subserver_count = 0;
     char buffer[BUFFER_SIZE];
-    semd = semget(KEY, 1, IPC_CREAT | IPC_EXCL | 0644);
+    int semd = semget(KEY, 1, IPC_CREAT | IPC_EXCL | 0644);
     if (semd == -1){
         printf("error %d: %s\n", errno, strerror(errno));
         exit(0);

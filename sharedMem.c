@@ -18,13 +18,13 @@ union semun {
 
 int main() {
     int shmd;
-    if (shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | IPC_EXCL | 0644))
+    if (shmd = shmget(KEY,SEG_SIZE, IPC_CREAT | 0644))
         printf("shared memory segment created\n");
     else{
         printf("error %d: %s\n", errno, strerror(errno));
         exit(0);
     }
-    int semd = semget(KEY, 1, IPC_CREAT | IPC_EXCL | 0644);
+    int semd = semget(KEY, 1, IPC_CREAT | 0644);
     if (semd == -1){
         printf("error %d: %s\n", errno, strerror(errno));
         exit(0);

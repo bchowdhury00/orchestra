@@ -16,7 +16,6 @@ union semun {
     struct semid_ds *buff;
     unsigned short *array;
 };
-void process(char *s);
 void subserver(int from_client);
 
 int main() {
@@ -88,7 +87,7 @@ void subserver(int client_socket) {
     int shmd = shmget(KEY,SEG_SIZE,0);
     memory = shmat(shmd,0,0);
     printf("%d",*memory);
-    char c = 48 + memory;
+    char c = 48 + *memory;
     write(client_socket,c,sizeof(c));
     *memory = *memory + 1;
     shmdt(memory);

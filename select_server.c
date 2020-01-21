@@ -46,8 +46,7 @@ int main() {
      if (f == 0){
      char * memory;
        //subserver(client_socket);
-       while (recv(from_client, buffer, sizeof(buffer),0)){
-
+       while (recv(client_socket, buffer, sizeof(buffer),0)){
            if (subserver_count == 0)
                memory = "a";
            else if (subserver_count == 1)

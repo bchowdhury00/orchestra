@@ -79,28 +79,31 @@ int main() {
 }
 
 void subserver(int from_client) {
-    char memory;
-    int semd = semget(KEY, 1, 0);
-    struct sembuf sb;
-    sb.sem_num = 0;
-    sb.sem_op = -1;
-    semop(semd, &sb, 1);
-    int shmd = shmget(KEY,SEG_SIZE,0);
-    memory = shmat(shmd,0,0);
-    if (strlen(memory) == 0)
-        memory = "a";
-    if (strlen(memory) == 1)
-        memory = "aa";
-    if (strlen(memory) == 2)
-        memory = "aaa";
-    if (strlen(memory) == 3)
-        memory = "aaaa";
-    if (strlen(memory) == 4)
-        memory = "aaaaa";
-    write(from_client,memory,sizeof(memory));
-    shmdt(memory);
-    sb.sem_op = 1;
-    semop(semd, &sb, 1);
-    close(from_client);
-    exit(0);
+    char buffer[BUFFER_SIZE];
+    while (read(client_socket, buffer, sizeof(buffer))) {
+        char memory;
+        int semd = semget(KEY, 1, 0);
+        struct sembuf sb;
+        sb.sem_num = 0;
+        sb.sem_op = -1;
+        semop(semd, &sb, 1);
+        int shmd = shmget(KEY,SEG_SIZE,0);
+        memory = shmat(shmd,0,0);
+        if (strlen(memory) == 0)
+            memory = "a";
+        if (strlen(memory) == 1)
+            memory = "aa";
+        if (strlen(memory) == 2)
+            memory = "aaa";
+        if (strlen(memory) == 3)
+            memory = "aaaa";
+        if (strlen(memory) == 4)
+            memory = "aaaaa";
+        write(from_client,memory,sizeof(memory));
+        shmdt(memory);
+        sb.sem_op = 1;
+        semop(semd, &sb, 1);
+        close(from_client);
+        exit(0);
+    }
 }

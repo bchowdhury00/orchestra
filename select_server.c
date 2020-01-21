@@ -79,7 +79,7 @@ int main() {
 }
 
 void subserver(int from_client) {
-    char * memory;
+    char memory;
     int semd = semget(KEY, 1, 0);
     struct sembuf sb;
     sb.sem_num = 0;
@@ -101,6 +101,6 @@ void subserver(int from_client) {
     shmdt(memory);
     sb.sem_op = 1;
     semop(semd, &sb, 1);
-    close(client_socket);
+    close(from_client);
     exit(0);
 }

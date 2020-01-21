@@ -62,6 +62,7 @@ int main(int argc, char **argv) {
     //this would allow for broadcast messages
     if (FD_ISSET(server_socket, &read_fds)) {
       recv(server_socket, buffer, sizeof(buffer),0);
+      print(buffer);
 	  int newbuffer = 0;
 	  if (buffer == '0') {
 		  newbuffer = 0;
@@ -78,8 +79,6 @@ int main(int argc, char **argv) {
 	  if (buffer == '4') {
 		  newbuffer = 4;
 	  }
-    newbuffer = 2;
-
       char *url;
       url = getLink(newbuffer);
 

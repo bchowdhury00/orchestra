@@ -14,7 +14,7 @@ int main(int argc, char ** argv){
     // http://www.jsayles.com/music/2015/What%20if%20I%20never%20speede%20-%20an%20Ayre%20by%20John%20Dowland.mp3
 
     char call[256];
-    strcpy(call, "xdg-open "); // opens music in browser
+    strcpy(call, "open "); // opens music in browser
     strcat(call, url); // append url
     system(call);
 

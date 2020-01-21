@@ -85,7 +85,8 @@ int main(int argc, char **argv) {
   char *url;
   url = getLink(newbuffer);
   char call[256];
-  strcpy(call, "xdg-open ");
+  //strcpy(call, "xdg-open "); // for ubuntu
+  strcpy(call, "open "); // for mac
   strcat(call, url); // append url
   system(call); // opens music in browser
 }

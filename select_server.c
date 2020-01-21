@@ -61,7 +61,7 @@ int main() {
 
 void subserver(int from_client) {
     char buffer[BUFFER_SIZE];
-    while (recv(from_client, buffer, sizeof(buffer),0)){
+    while (!recv(from_client, buffer, sizeof(buffer),0)){
         char * memory;
         int semd = semget(KEY, 1, 0);
         struct sembuf sb;

@@ -15,7 +15,6 @@ union semun {
     struct semid_ds *buff;
     unsigned short *array;
 };
-void subserver(int from_client);
 
 int main() {
     int semd;
@@ -28,7 +27,7 @@ int main() {
     semd = semget(KEY,1,0);
     semop(semd, &sb, 1);
     shmctl(shmd,IPC_RMID,0);
-    printf("removed shared memory");
+    printf("removed shared memory\n");
     semctl(semd,IPC_RMID, 0);
-    printf("removed semaphore");
+    printf("removed semaphore\n");
 }

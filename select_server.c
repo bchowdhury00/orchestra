@@ -8,7 +8,7 @@
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <errno.h>
-#define KEY 94847
+#define KEY 94849
 #define SEG_SIZE 200
 
 union semun {
@@ -72,7 +72,7 @@ void subserver(int from_client) {
         memory = shmat(shmd,0,0);
         printf("memory is equal to : %s\n",memory);
         if (strlen(memory) == 0)
-            memory = "a";
+            memory = "aaaa";
         else if (strlen(memory) == 1)
             memory = "aa";
         else if (strlen(memory) == 2)

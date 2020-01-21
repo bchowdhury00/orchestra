@@ -50,3 +50,18 @@ Biraj - 1/17/20
   - We are in a good place to finish by the new deadline
   - Sending files to other systems is now possible.
   - still not working with the application though
+
+Leo - 1/19/20
+  - Trying to send different things to each client
+  - global variable unchanging
+
+Team (Met Up) - 1/20/20
+  - Now realizing we do need shared memory to get it to work
+  - Everything runs, but clients do not receive different info
+
+Team (Discord Call) - 1/21/20
+  - The shared memory first gave us File exists error so we made a file to counteract that that we run every time.
+  - We still cannot get each client to play a different audio file.
+  - Dealing with issues because of the need to ssh into school computers
+  - Unfortunately, it became clear that we would not be able to finish
+  - The shared memory appears to work, but refuses to change 

@@ -13,6 +13,7 @@ char * getLink(int n){
   char *input = malloc(200 * sizeof(char));
   while(fgets(input, 200 * sizeof(char), f)){
     if (n == linknum){
+	  fclose(f);
       return input;
     } else {
       linknum++;

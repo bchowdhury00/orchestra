@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
         server_socket = client_setup( argv[1]);
     else
         server_socket = client_setup( TEST_IP );
-    int newbuffer = 10;
+    int newbuffer = 2;
     while (1) {
         //printf("enter data: ");
         FD_ZERO(&read_fds);
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
             recv(server_socket, buffer, sizeof(buffer),0);
             printf("-----[%s]\n",buffer);
             if (strlen(buffer) == 1) {
-                newbuffer = 0;
+                newbuffer = 4;
                 break;
             }
             if (strlen(buffer) == 2) {

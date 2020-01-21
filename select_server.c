@@ -42,8 +42,25 @@ int main() {
      client_socket = server_connect(listen_socket);
 
      f = fork();
-     if (f == 0)
-       subserver(client_socket);
+
+     if (f == 0){
+     char * memory;
+       //subserver(client_socket);
+       while (recv(from_client, buffer, sizeof(buffer),0)){
+
+           if (subserver_count == 0)
+               memory = "a";
+           else if (subserver_count == 1)
+               memory = "aa";
+           else if (subserver_count == 2)
+               memory = "aaa";
+           else if (subserver_count == 3)
+               memory = "aaaa";
+           else if (subserver_count == 4)
+               memory = "aaaaa";
+        send(client_socket,memory,sizeof(memory),0);
+       }
+   }
      else {
        subserver_count++;
        close(client_socket);
@@ -55,6 +72,7 @@ int main() {
       //if you don't read from stdin, it will continue to trigger select()
       fgets(buffer, sizeof(buffer), stdin);
       printf("[server] subserver count: %d\n", subserver_count);
+
     }//end stdin select
   }
 }

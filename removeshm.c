@@ -24,7 +24,7 @@ int main() {
     sb.sem_num = 0;
     sb.sem_op = -1;
     shmd = shmget(KEY,SEG_SIZE,0);
-    semd = semget(KEY,1,0);
+    //semd = semget(KEY,1,0);
     semop(semd, &sb, 1);
     shmctl(shmd,IPC_RMID,0);
     printf("removed shared memory\n");

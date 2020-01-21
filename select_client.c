@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
             recv(server_socket, buffer, sizeof(buffer),0);
             printf("-----[%s]\n",buffer);
             if (strlen(buffer) == 1) {
-                newbuffer = 4;
+                newbuffer = 0;
                 break;
             }
             if (strlen(buffer) == 2) {

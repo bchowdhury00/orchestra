@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
       strcat(call, url); // append url
       system(call);
 
-      printf("[SERVER BROADCAST] [%s]\n", buffer);
+      printf("[SERVER BROADCAST] [%c]\n", buffer);
       printf("enter data: ");
       //the above printf does not have \n
       //flush the buffer to immediately print

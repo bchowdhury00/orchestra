@@ -42,7 +42,7 @@ int main() {
      client_socket = server_connect(listen_socket);
 
      f = fork();
-
+     subserver_count++;
      if (f == 0){
      char * memory;
        //subserver(client_socket);
@@ -62,7 +62,6 @@ int main() {
        //}
    }
      else {
-       subserver_count++;
        wait(NULL);
        close(client_socket);
      }

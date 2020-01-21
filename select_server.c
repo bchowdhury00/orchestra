@@ -72,7 +72,7 @@ void subserver(int from_client) {
         memory = shmat(shmd,0,0);
         printf("memory is equal to : %s",memory);
         if (strlen(memory) == 0)
-            memory = "a";
+            memory = "aaa";
         else if (strlen(memory) == 1)
             memory = "aa";
         else if (strlen(memory) == 2)

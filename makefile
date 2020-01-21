@@ -20,6 +20,6 @@ create:
 	./a
 
 clean:
-	gcc -o a removeshm.c
-	./a
+	gcc -o b removeshm.c
+	./b
 	rm *.o

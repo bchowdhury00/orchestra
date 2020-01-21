@@ -49,19 +49,20 @@ int main() {
        //while (recv(client_socket, buffer, sizeof(buffer),0)){
            if (subserver_count == 0)
                memory = "a";
-           else if (subserver_count == 1)
+           if (subserver_count == 1)
                memory = "aa";
-           else if (subserver_count == 2)
+           if (subserver_count == 2)
                memory = "aaa";
-           else if (subserver_count == 3)
+           if (subserver_count == 3)
                memory = "aaaa";
-           else if (subserver_count == 4)
+           if (subserver_count == 4)
                memory = "aaaaa";
         send(client_socket,memory,sizeof(memory),0);
        //}
    }
      else {
        subserver_count++;
+       wait(NULL);
        close(client_socket);
      }
     }//end listen_socket select

@@ -15,6 +15,12 @@ select_server.o: select_server.c networking.h
 networking.o: networking.c networking.h
 	gcc -c networking.c
 
+remove: removeshm.o
+	gcc -o removeshm.o
+
+removeshm.o: removeshm.c
+	gcc -c removeshm.c
+
 clean:
 	rm *.o
 	rm *~

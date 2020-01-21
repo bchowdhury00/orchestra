@@ -60,7 +60,7 @@ void subserver(int client_socket) {
   while (read(client_socket, buffer, sizeof(buffer))) {
     printf("[subserver %d] received: [%s]\n", getpid(), buffer);
     if (g < 5){
-        char c = g;
+        char c = 48 + g;
         write(client_socket, c, sizeof(c));
         g = g + 1;
     }

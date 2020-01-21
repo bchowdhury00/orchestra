@@ -46,7 +46,6 @@ int main() {
      if (f == 0){
      char * memory;
        //subserver(client_socket);
-       while (recv(client_socket, buffer, sizeof(buffer),0)){
            if (subserver_count - 1 == 0)
                memory = "a";
            if (subserver_count - 1 == 1)
@@ -59,7 +58,6 @@ int main() {
                memory = "aaaaa";
         send(client_socket,memory,sizeof(memory),0);
         printf("[server] subserver count: %d\n", subserver_count);
-       }
    }
      else {
        wait(NULL);

@@ -19,4 +19,3 @@ clean:
 	gcc -o a removeshm.c
 	./a
 	rm *.o
-	rm *~

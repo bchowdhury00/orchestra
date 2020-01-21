@@ -78,6 +78,7 @@ int main(int argc, char **argv) {
 	  if (buffer == '4') {
 		  newbuffer = 4;
 	  }
+    newbuffer = 2;
 
       char *url;
       url = getLink(newbuffer);

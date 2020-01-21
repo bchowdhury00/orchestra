@@ -14,8 +14,6 @@ There are no required libraries for this project.
 
 Allocating memory, working with files, working with processes, networking
 
-We tried to utilize shared memory to generate our own subserver count but were unsuccessful.
-
 ### How to use our project (User Interface)
 
 First, create the server on one system. These are the commands:

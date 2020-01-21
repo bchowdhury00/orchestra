@@ -53,26 +53,26 @@ int main(int argc, char **argv) {
             char * message = "send me a";
             write(server_socket,message,sizeof(message));
             recv(server_socket, buffer, sizeof(buffer),0);
-	           // if (strlen(buffer) == 1) {
-             //       newbuffer = 0;
-             //       break;
-             //   }
-             //   if (strlen(buffer) == 2) {
-             //       newbuffer = 1;
-             //       break;
-             //   }
-             //   if (strlen(buffer) == 3) {
-             //       newbuffer = 2;
-             //       break;
-             //   }
-             //   if (strlen(buffer) == 4) {
-             //       newbuffer = 3;
-             //       break;
-             //   }
-             //   if (strlen(buffer) == 5) {
-             //       newbuffer = 4;
-             //       break;
-	           //   }
+	           if (strlen(buffer) == 1) {
+                   newbuffer = 0;
+                   break;
+               }
+               if (strlen(buffer) == 2) {
+                   newbuffer = 1;
+                   break;
+               }
+               if (strlen(buffer) == 3) {
+                   newbuffer = 2;
+                   break;
+               }
+               if (str len(buffer) == 4) {
+                   newbuffer = 3;
+                   break;
+               }
+               if (strlen(buffer) == 5) {
+                   newbuffer = 4;
+                   break;
+	             }
              }
          } //end while loop
       // printf("[SERVER BROADCAST] [%c]\n", buffer);
@@ -81,21 +81,6 @@ int main(int argc, char **argv) {
       //flush the buffer to immediately print
       //fflush(stdout);
   //end socket select
-  if (strlen(buffer) == 1) {
-        newbuffer = 0;
-    }
-    if (strlen(buffer) == 2) {
-        newbuffer = 1;
-    }
-    if (strlen(buffer) == 3) {
-        newbuffer = 2;
-    }
-    if (strlen(buffer) == 4) {
-        newbuffer = 3;
-    }
-    if (strlen(buffer) == 5) {
-        newbuffer = 4;
-    }
   char *url;
   url = getLink(newbuffer);
   char call[256];

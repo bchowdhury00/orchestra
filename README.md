@@ -13,3 +13,17 @@ There are no required libraries for this project.
 Allocating memory, working with files, working with processes, networking
 
 ### How to use our project (User Interface)
+
+First, create the server on one system. These are the commands:
+```
+make
+make select
+./server
+```
+
+Then, on each client system, compile in this order:
+```
+make
+make select
+./client
+```

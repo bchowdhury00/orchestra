@@ -54,6 +54,7 @@ Biraj - 1/17/20
 Biraj - 1/18/20
   - Multi-client networking implemented 
   - Server can send the command we need to 2 clients
+  - Makefile is now more sophisticated
 
 Leo - 1/19/20
   - Trying to send different things to each client
@@ -69,7 +70,7 @@ Team (Discord Call) - 1/20/20
   - We still cannot get each client to play a different audio file.
   - Dealing with issues because of the need to ssh into school computers
   - Unfortunately, it became clear that we would not be able to finish
-  - The shared memory appears to work, but refuses to change 
+  - The shared memory appears to work, but refuses to change
 
 Leo - 1/21/20
   - First client gets the right information, but then the server behaves incorrectly for additional clients 
@@ -77,6 +78,6 @@ Leo - 1/21/20
 
 Team (Met Up) - 1/21/20
   - Continued trying to implement shared memory
-  - Discovered existence of subserver_count
-  - Scrapped shared memory model
+  - Discovered existence of subserver_count, which is what we were trying to implement/produce
+  - Adjusted use of shared memory
   - Each client now gets the right information
